@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: accounting-inventory-erp
+    runtime: docker
+    plan: free
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: ERP_DB_SERVER
+        sync: false
+      - key: ERP_DB_NAME
+        sync: false
+      - key: ERP_DB_USERNAME
+        sync: false
+      - key: ERP_DB_PASSWORD
+        sync: false
+      - key: ERP_DB_ENCRYPT
+        value: "yes"
+      - key: ERP_DB_TRUST_CERT
+        value: "no"

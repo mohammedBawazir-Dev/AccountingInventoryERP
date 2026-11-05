@@ -1,0 +1,1 @@
+<div class="empty-state panel"><div>404</div><h2>الصفحة غير موجودة</h2><p><?= Security::e($message ?? 'الصفحة المطلوبة غير موجودة.') ?></p><a class="btn btn-primary" href="?page=dashboard">العودة إلى لوحة التحكم</a></div>

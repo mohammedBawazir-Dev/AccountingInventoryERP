@@ -1,0 +1,7 @@
+.git
+.gitignore
+README_AR.md
+docs/
+database/*.sql
+*.zip
+*.log

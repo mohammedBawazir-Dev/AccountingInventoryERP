@@ -1,0 +1,17 @@
+Options -Indexes
+RewriteEngine On
+
+# Direct requests under /public are already in the web root.
+RewriteRule ^public/ - [L]
+
+# Send the project home page to public/.
+RewriteRule ^$ public/ [L]
+
+# Send other non-existing paths (including assets/...) to public/.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [QSA,L]
+
+<FilesMatch "(?i)^(README_AR\.md|.*\.(md|sql|txt))$">
+    Require all denied
+</FilesMatch>
